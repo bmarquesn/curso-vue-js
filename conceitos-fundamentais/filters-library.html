@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtros Prontos</title>
+</head>
+
+<body>
+    <div id="filters">
+        <h3>{{ name | placeholder('Inform o nome') }}</h3>
+        <h4>{{ msg | truncate(30) }}</h4>
+        <h2>O meu salário é: {{ salary | moneyReal }} {{ salary | pluralize(['real', 'reais']) }}</h2>
+        <input type="text" placeholder="Digite seu salário" v-model="salary" />
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue2-filters/dist/vue2-filters.min.js"></script>
+
+    <script>
+        /**
+         * Os filters existem para mudar somente a exibição das variaveis. O valor das variáveis permanecem o mesmo, só muda a exibição destas
+        */
+        let app = new Vue({
+            el: '#filters',
+            data: {
+                name: "",
+                msg: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet nulla natus impedit repudiandae dolore reprehenderit, aut alias. Impedit incidunt enim vel ex, ratione culpa, nostrum molestiae, tempora animi quaerat natus. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet nulla natus impedit repudiandae dolore reprehenderit, aut alias. Impedit incidunt enim vel ex, ratione culpa, nostrum molestiae, tempora animi quaerat natus. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet nulla natus impedit repudiandae dolore reprehenderit, aut alias. Impedit incidunt enim vel ex, ratione culpa, nostrum molestiae, tempora animi quaerat natus.",
+                salary: 1
+            },
+            filters: {
+                upper: function (value) {
+                    return value.toUpperCase();
+                },
+                moneyReal: function (value) {
+                    return `R$ ${parseInt(value).toFixed(2)}`;
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

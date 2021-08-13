@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtros</title>
+</head>
+
+<body>
+    <div id="filters">
+        <h1>Helo {{ name }}</h1>
+        <h1>Helo {{ name | upper }}</h1>
+        <h2>O meu salário é: {{ salary | moneyReal }}</h2>
+        <input type="text" placeholder="Digite seu salário" v-model="salary" />
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6"></script>
+    <script>
+        /**
+         * Os filters existem para mudar somente a exibição das variaveis. O valor das variáveis permanecem o mesmo, só muda a exibição destas
+        */
+        let app = new Vue({
+            el: '#filters',
+            data: {
+                name: "Bruno Nogueira",
+                salary: 0
+            },
+            filters: {
+                upper: function (value) {
+                    return value.toUpperCase();
+                },
+                moneyReal: function (value) {
+                    return `R$ ${parseInt(value).toFixed(2)}`;
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
