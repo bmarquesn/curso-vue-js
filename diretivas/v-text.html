@@ -5,13 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diretivas v-show</title>
+    <title>Diretivas v-text</title>
 </head>
 
 <body>
     <div id="directivees">
-        <h1 v-show="isLogged">V-SHOW - Seja bem vindo à área Administrativa</h1>
-        <h1 v-if="isLogged">V-IF - Seja bem vindo à área Administrativa</h1>
+        <h4>{{ nome1 }}</h4>
+        <h4 v-text="nome2"></h4>
+        <p><strong>'v-text'</strong> e <strong>{{ brackets }}</strong> são a mesma coisa. Utilizando <strong>{{ brackets }}</strong> o Vue usa do <strong>v-text</strong> para exibir tal texto.</p>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6"></script>
@@ -21,7 +22,9 @@
         let app = new Vue({
             el: '#directivees',
             data: {
-                isLogged: true
+                brackets: "{{}}",
+                nome1: "v-text: Bruno Nogueira",
+                nome2: "{{ elemento }}: Bruno Nogueira"
             }
         });
     </script>
