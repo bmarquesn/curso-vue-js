@@ -12,7 +12,7 @@
     <div id="directives">
         <h1 v-upper>{{ name }}</h1>
         <h2 v-capitalize>helo word {{ name }}</h2>
-        <!-- h2 v-custom:parametro.mod1.mod2="'Informação'">{{ name }}</h2 -->
+        <!-- h2 v-custom:parametro.mod1.mod2="'500'">{{ name }}</h2 -->
         <h2 v-custom:[argument]="distance">{{ name }}</h2>
     </div>
 
@@ -43,6 +43,7 @@
                     eval(`element.style.margin${newDirection} = '` + value + `px'`);
                     break;
                 default:
+                    console.log(direction);
                     console.error('Informe uma opção correta');
             }
         }
