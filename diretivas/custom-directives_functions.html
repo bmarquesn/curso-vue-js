@@ -92,6 +92,7 @@
                     update(element, binding, vnode, oldvnode) {
                         console.log(vnode, oldvnode);
                         element.style.textDecoration = "underline";
+                        binding.arg = "right";
                         setDirection(element, binding);
                     }
                 }
