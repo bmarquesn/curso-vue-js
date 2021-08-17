@@ -44,12 +44,12 @@
                         <h2>{{ post.title + ' - ' + (key + 1) }}</h2>
                         <p v-if="post.resum" key="postExpanded">
                             {{ post.content | truncate(250) }}<br />
-                            <a v-on:click.prevent="expandPost(false, key)">Exibir mais</a>
+                            <a href="#" v-on:click.prevent="expandPost(false, key)">Exibir mais</a>
                         </p>
                         <p v-else key="postColapsed">
                             {{ post.content }}
                             <br />
-                            <a v-on:click.prevent="expandPost(true, key)">Exibir menos</a>
+                            <a href="#" v-on:click.prevent="expandPost(true, key)">Exibir menos</a>
                         </p>
                     </div>
                 </div>
