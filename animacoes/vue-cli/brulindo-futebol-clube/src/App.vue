@@ -14,6 +14,14 @@ export default {
     HelloWorld
   }
 }
+/**
+* para criar components utilizando vue-cli (utiliza-se o prompt de comando):
+* ir na pasta onde ficará o projeto
+* vue create brulindo-futebol-clube
+* npm audit fix
+* ir na pasta que foi criada
+* npm run serve
+*/
 </script>
 <!-- este "scoped" serve para estipular que este CSS será somente para este component, o component atual -->
 <style scoped>
