@@ -1,17 +1,22 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <hcode-header />
+    <hcode-section />
+    <hcode-footer />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import HcodeHeader from './components/HcodeHeader.vue';
+import HcodeFooter from './components/HcodeFooter.vue';
+import HcodeSection from './components/HcodeSection.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HcodeHeader,
+    HcodeFooter,
+    HcodeSection
   }
 }
 /**
@@ -25,12 +30,5 @@ export default {
 </script>
 <!-- este "scoped" serve para estipular que este CSS será somente para este component, o component atual -->
 <style scoped>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+@import url('https://fonts.googleapis.com/css?family=Rajdhani&display=swap');
 </style>
